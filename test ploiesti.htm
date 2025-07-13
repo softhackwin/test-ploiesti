@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test oferit de pagina Facebook Ploiesti Info</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      margin: 0; padding: 20px;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+      text-align: center;
+      font-weight: 700;
+    }
+    p.subtitle {
+      max-width: 650px;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #34495e;
+    }
+    p.intro {
+      max-width: 650px;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    form#quizForm {
+      max-width: 700px;
+      width: 100%;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    .question h3 {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: #34495e;
+    }
+    label {
+      display: block;
+      background: #ecf0f1;
+      margin-bottom: 8px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      font-size: 1rem;
+    }
+    label:hover {
+      background: #d1d8e0;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+      accent-color: #2980b9;
+      cursor: pointer;
+    }
+    button {
+      background-color: #2980b9;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 0 auto;
+      font-weight: 600;
+    }
+    button:hover {
+      background-color: #1c5980;
+    }
+    #result {
+      max-width: 700px;
+      margin-top: 30px;
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      color: #2c3e50;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    .correct {
+      color: green;
+      font-weight: 700;
+    }
+    .wrong {
+      color: #e74c3c;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      form#quizForm, #result {
+        padding: 20px;
+        margin: 0 10px;
+      }
+      button {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+      label {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      p.subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<img src="pl.jpg" alt="Imagine Ploiești" class="header-img" />
+  <h1>Test oferit de pagina Facebook Ploiești Info</h1>
+  <p class="subtitle">Test Cultură Generală - Ploiești (20 întrebări)</p>
+<div style="display:flex; gap:10px; margin-top:20px;">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://exemplu.ro" target="_blank" rel="noopener noreferrer" style="background:#4267B2; color:#fff; padding:10px 15px; border-radius:5px; text-decoration:none;">Facebook</a>
+  <a href="mailto:?subject=Test%20Ploiești%20Info&body=Testează%20testul%20aici:%20https://exemplu.ro" style="background:#555; color:#fff; padding:10px 15px; border-radius:5px; text-decoration:none;">Email</a>
+  <a href="https://api.whatsapp.com/send?text=Testează%20testul%20aici:%20https://exemplu.ro" target="_blank" rel="noopener noreferrer" style="background:#25D366; color:#fff; padding:10px 15px; border-radius:5px; text-decoration:none;">WhatsApp</a>
+</div>
+
+  <p class="intro">Testează-ți cunoștințele despre orașul nostru!<br> Răspunde la cele 17 întrebări și vezi cât de bine cunoști Ploieștiul.</p>
+  
+  <form id="quizForm">
+    <!-- Întrebări generate din JS -->
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const quizData = [
+      {
+        q: "1. Care este anul atestat documentar al orașului Ploiești?",
+        options: ["1450", "1595", "1700", "1503"],
+        answer: "1503"
+      },
+      {
+        q: "2. Care industrie a fost dominantă în Ploiești în secolul XX?",
+        options: ["Petrol și rafinare", "Textile", "Agricultură", "Metalurgie"],
+        answer: "Petrol și rafinare"
+      },
+      {
+        q: "3. Cum se numește stadionul principal al echipei locale FC Petrolul?",
+        options: ["Ilie Oană", "Steaua", "Dinamo", "Rapid"],
+        answer: "Ilie Oană"
+      },
+      {
+        q: "4. Care este numele celebrului teatru din Ploiești?",
+        options: ["Teatrul Toma Caragiu", "Teatrul Odeon", "Teatrul Național", "Teatrul Metropolis"],
+        answer: "Teatrul Toma Caragiu"
+      },
+      {
+        q: "5. Câte rafinării are Ploieștiul?",
+        options: ["2", "1", "3", "4"],
+        answer: "3"
+      },
+      {
+        q: "6. Ce apă curgătoare traversează orașul Ploiești?",
+        options: ["Pârâul Dâmbu", "Râul Prahova", "Râul Argeș", "Râul Dâmbovița"],
+        answer: "Pârâul Dâmbu"
+      },
+      {
+        q: "7. Care este legenda legată de originea numelui Ploiești?",
+        options: [
+          "Numele provine de la ciobanul Moș Ploaie",
+          "Numele provine de la un nobil local numit Ploaie",
+          "Numele provine de la un animal",
+          "Numele provine de la ploile frecvente din zonă"
+        ],
+        answer: "Numele provine de la ciobanul Moș Ploaie"
+      },
+      {
+        q: "8. Cine este Toma Caragiu?",
+        options: [
+          "Actor și regizor celebru născut în Ploiești",
+          "Primar al orașului Ploiești",
+          "Scriitor român faimos",
+          "Pictor cunoscut"
+        ],
+        answer: "Actor și regizor celebru născut în Ploiești"
+      },
+      {
+        q: "9. Care este centrul comercial important din Ploiești?",
+        options: ["Shopping City", "Media Galaxy", "Mega Mall", "Unirea Shopping"],
+        answer: "Shopping City"
+      },
+      {
+        q: "10. Anul miscarii Republica de la Ploiesti?",
+        options: ["1908", "1830", "1870", "1928"],
+        answer: "1870"
+      },
+      {
+        q: "11. În ce an a fost inaugurată Statuia Libertății din Ploiești, monument dedicat eroilor din Primul Război Mondial?",
+        options: ["1875", "1881", "1900", "1920"],
+        answer: "1881"
+      },
+      {
+        q: "12. Cum se numește muzeul important de istorie din Ploiești?",
+        options: ["Muzeul Județean de Istorie și Arheologie Prahova", "Muzeul Satului", "Muzeul Național de Artă", "Muzeul Țăranului Român"],
+        answer: "Muzeul Județean de Istorie și Arheologie Prahova"
+      },
+      {
+        q: "13. Ce personalitate literară este asociată cu Ploieștiul?",
+        options: ["Nichita Stănescu", "Mihai Eminescu", "Ion Creangă", "Lucian Blaga"],
+        answer: "Nichita Stănescu"
+      },
+      {
+        q: "14. Cum se numește universitatea importantă din Ploiești?",
+        options: ["Universitatea Petrol-Gaze din Ploiești", "Universitatea București", "Universitatea Politehnica", "Universitatea de Vest"],
+        answer: "Universitatea Petrol-Gaze din Ploiești"
+      },
+      {
+        q: "15. Care a fost rolul Ploieștiului în timpul celui de-al Doilea Război Mondial?",
+        options: [
+          "Centru important de rafinare a petrolului strategic",
+          "Cartier general al armatei",
+          "Loc de refugiu",
+          "Oraș neutru"
+        ],
+        answer: "Centru important de rafinare a petrolului strategic"
+      },
+      {
+        q: "16. De unde provine vorba <em>O întorci ca la Ploiești</em>?",
+        options: ["De la oamenii necinstiți din zonă", "De la intersecția centrală unde mașinile întorceau pe loc, în trecut", "De la întoarcerea în sens invers a locomotivelor în Depoul Sud", "De la întoarcerea rapidă a tramvaiului în nordul orașului"],
+        answer: "De la întoarcerea în sens invers a locomotivelor în Depoul Sud"
+      },
+      {
+        q: "17. Cum se numește clădirea impunătoare din centrul Ploieștiului, construită în stil neoclasic francez?",
+        options: [
+          "Palatul Culturii",
+          "Casa Memorială Nichita Stănescu",
+          "Teatrul Toma Caragiu",
+          "Muzeul Județean Prahova"
+        ],
+        answer: "Palatul Culturii"
+      }
+    ];
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    const quizForm = document.getElementById('quizForm');
+    const resultDiv = document.getElementById('result');
+
+    function createQuiz() {
+      quizData.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.classList.add('question');
+
+        const optionsShuffled = shuffleArray([...item.options]);
+
+        div.innerHTML = `
+          <h3>${item.q}</h3>
+          ${optionsShuffled.map(opt => `
+            <label>
+              <input type="radio" name="q${i}" value="${opt}" />
+              ${opt}
+            </label>
+          `).join('')}
+        `;
+        quizForm.appendChild(div);
+      });
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = 'Vezi scorul';
+      btn.onclick = checkAnswers;
+      quizForm.appendChild(btn);
+    }
+
+    function checkAnswers() {
+      let score = 0;
+      let total = quizData.length;
+      let detailedResults = '';
+
+      for(let i=0; i<total; i++) {
+        const qName = `q${i}`;
+        const options = document.getElementsByName(qName);
+        let userAnswer = '';
+        for (let opt of options) {
+          if(opt.checked) {
+            userAnswer = opt.value;
+            break;
+          }
+        }
+        if(userAnswer === '') {
+          detailedResults += `<p><strong>Întrebarea ${i+1}:</strong> Nu ai răspuns.</p>`;
+        } else if(userAnswer === quizData[i].answer) {
+          score++;
+          detailedResults += `<p><strong>Întrebarea ${i+1}:</strong> <span class="correct">Corect</span></p>`;
+        } else {
+          detailedResults += `<p><strong>Întrebarea ${i+1}:</strong> <span class="wrong">Greșit</span> (Corect: ${quizData[i].answer})</p>`;
+        }
+      }
+
+      const percent = ((score / total) * 100).toFixed(0);
+      resultDiv.innerHTML = `
+        <p><strong>Ai răspuns corect la ${score} din ${total} întrebări (${percent}%).</strong></p>
+        ${detailedResults}
+        <button onclick="resetQuiz()">Reîncearcă testul</button>
+      `;
+      window.scrollTo({ top: resultDiv.offsetTop, behavior: 'smooth' });
+    }
+
+    function resetQuiz() {
+      quizForm.reset();
+      resultDiv.innerHTML = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    createQuiz();
+  </script>
+</body>
+</html>
